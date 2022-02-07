@@ -11,7 +11,7 @@ Redoc Theme for [gRPC UI](https://github.com/fullstorydev/grpcui/)
 
 ## Prerequisites
 
-- `Go >= 1.16`
+- `Go >= 1.17`
 
 ## Install
 
