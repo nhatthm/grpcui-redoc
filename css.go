@@ -1,6 +1,10 @@
 package grpcuiredoc
 
 const cssContent = `
+/**
+ * Theme: nhatthm/grpcui-redoc
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
 h1 {
@@ -32,11 +36,6 @@ img.grpc-logo {
 	content: "powered by nhatthm/grpcui-redoc";
 }
 
-#grpc-request-response .grpc-tabcontent.ui-tabs-panel {
-    display: flex;
-    flex-direction: column;
-}
-
 #grpc-request-response .grpc-tabcontent.ui-tabs-panel h3 {
 	border-bottom: 1px solid rgba(38, 50, 56, 0.3);
     margin: 1em 0px;
@@ -47,27 +46,36 @@ img.grpc-logo {
     line-height: 20px;
 }
 
-#grpc-request-response .grpc-tabcontent.ui-tabs-panel > h3:first-child {
+#grpc-request-tab {
+    display: flex;
+    flex-direction: column;
+}
+
+#grpc-request-tab > h3:first-child {
 	order: 2;
 }
 
-#grpc-request-response .grpc-tabcontent.ui-tabs-panel #grpc-request-metadata {
+#grpc-request-tab #grpc-request-metadata {
 	order: 3;
 }
 
-#grpc-request-response .grpc-tabcontent.ui-tabs-panel > h3:nth-child(5) {
+#grpc-request-tab > h3:nth-child(5) {
 	order: 4;
 }
 
-#grpc-request-response .grpc-tabcontent.ui-tabs-panel #grpc-request-timeout {
+#grpc-request-tab #grpc-request-timeout {
 	order: 5;
 }
 
-#grpc-request-response .grpc-tabcontent.ui-tabs-panel > button {
+#grpc-request-tab > button {
 	order: 6;
-	width: 150px;
+	width: 100px;
 	margin-top: 10px;
 	cursor: pointer;
+}
+
+#grpc-request-metadata-form input {
+	padding: 6px;
 }
 
 #grpc-form .grpc-request-table button.delete,
@@ -101,6 +109,7 @@ img.grpc-logo {
 	background-position-x: 100%;
 	background-position-y: 12px;
 	border: 1px solid #11181A;
+	outline: none;
 }
 
 .ui-widget {
@@ -254,6 +263,7 @@ img.grpc-logo {
 #grpc-request-form select:active,
 #grpc-request-form select {
 	border-width: 0 0 1px;
+	outline: none;
 }
 
 #grpc-request-form textarea {
@@ -272,5 +282,32 @@ img.grpc-logo {
 #grpc-request-form .null {
 	line-height: 1.5em;
 	padding: 6px 6px 6px 0;
+}
+
+#grpc-response-error {
+	color: rgb(212, 31, 28);
+	background: rgba(212, 31, 28, 0.07);
+	font-family: Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+	padding: 10px;
+	font-size: 100%;
+}
+
+#grpc-response-error-summary {
+	font-weight: 700;
+}
+
+#grpc-response-error #grpc-response-error-num {
+	color: inherit;
+}
+
+#grpc-response-error #grpc-response-error-msg {
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
+}
+
+#grpc-history-list .history-item-header .history-item-result.error {
+    color: rgb(212, 31, 28);
 }
 `
