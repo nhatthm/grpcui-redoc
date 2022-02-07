@@ -13,9 +13,12 @@ import (
 	"google.golang.org/grpc"
 )
 
+// HandlerOption is an alias of github.com/fullstorydev/grpcui/standalone.HandlerOption to avoid multiple imports.
+type HandlerOption = standalone.HandlerOption
+
 // HandlerViaReflection is a wrapper around github.com/fullstorydev/grpcui/standalone.HandlerViaReflection to provide
 // the theme.
-func HandlerViaReflection(ctx context.Context, cc grpc.ClientConnInterface, target string, opts ...standalone.HandlerOption) (http.Handler, error) {
+func HandlerViaReflection(ctx context.Context, cc grpc.ClientConnInterface, target string, opts ...HandlerOption) (http.Handler, error) {
 	m, err := grpcui.AllMethodsViaReflection(ctx, cc)
 	if err != nil {
 		return nil, err
@@ -30,8 +33,8 @@ func HandlerViaReflection(ctx context.Context, cc grpc.ClientConnInterface, targ
 }
 
 // Handler is a wrapper around github.com/fullstorydev/grpcui/standalone.Handler to provide the theme.
-func Handler(ch grpcdynamic.Channel, target string, methods []*desc.MethodDescriptor, files []*desc.FileDescriptor, opts ...standalone.HandlerOption) http.Handler {
-	handlerOpts := make([]standalone.HandlerOption, 3, len(opts)+3)
+func Handler(ch grpcdynamic.Channel, target string, methods []*desc.MethodDescriptor, files []*desc.FileDescriptor, opts ...HandlerOption) http.Handler {
+	handlerOpts := make([]HandlerOption, 3, len(opts)+3)
 	handlerOpts[0] = standalone.ServeAsset("theme.css", []byte(cssContent))
 	handlerOpts[1] = standalone.AddCSS(fmt.Sprintf("theme.css?t=%d", time.Now().UnixMilli()), nil)
 	handlerOpts[2] = standalone.AddCSS(fmt.Sprintf("description.css?t=%d", time.Now().UnixMilli()), nil)
@@ -52,7 +55,7 @@ func Handler(ch grpcdynamic.Channel, target string, methods []*desc.MethodDescri
 }
 
 // AddDescription adds description after the target section in the header.
-func AddDescription(desc string) standalone.HandlerOption {
+func AddDescription(desc string) HandlerOption {
 	const css = `.target::after {content: %q;}`
 
 	return standalone.ServeAsset("description.css", []byte(fmt.Sprintf(css, desc)))
