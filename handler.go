@@ -15,6 +15,8 @@ import (
 
 //go:generate make generate
 
+const svgLogo = "https://cncf-branding.netlify.app/img/projects/grpc/horizontal/white/grpc-horizontal-white.svg"
+
 // HandlerOption is an alias of github.com/fullstorydev/grpcui/standalone.HandlerOption to avoid multiple imports.
 type HandlerOption = standalone.HandlerOption
 
@@ -47,7 +49,7 @@ func Handler(ch grpcdynamic.Channel, target string, methods []*desc.MethodDescri
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		// Original logo is blurry on mac/edge, so render the original svg.
 		if req.URL.Path == "/grpc-logo.png" {
-			http.Redirect(w, req, "https://cncf-branding.netlify.app/img/projects/grpc/horizontal/white/grpc-horizontal-white.svg", http.StatusTemporaryRedirect)
+			http.Redirect(w, req, svgLogo, http.StatusTemporaryRedirect)
 
 			return
 		}

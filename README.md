@@ -1,6 +1,8 @@
 # Redoc Theme for gRPC UI
 
 [![GitHub Releases](https://img.shields.io/github/v/release/nhatthm/grpcui-redoc)](https://github.com/nhatthm/grpcui-redoc/releases/latest)
+[![Build Status](https://github.com/nhatthm/grpcui-redoc/actions/workflows/test.yaml/badge.svg)](https://github.com/nhatthm/grpcui-redoc/actions/workflows/test.yaml)
+[![codecov](https://codecov.io/gh/nhatthm/grpcui-redoc/branch/master/graph/badge.svg?token=eTdAgDE2vR)](https://codecov.io/gh/nhatthm/grpcui-redoc)
 [![Go Report Card](https://goreportcard.com/badge/github.com/nhatthm/grpcui-redoc)](https://goreportcard.com/report/github.com/nhatthm/grpcui-redoc)
 [![GoDevDoc](https://img.shields.io/badge/dev-doc-00ADD8?logo=go)](https://pkg.go.dev/github.com/nhatthm/grpcui-redoc)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=PJZSGJN57TDJY)
