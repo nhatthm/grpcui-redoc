@@ -36,3 +36,9 @@ jobs:
 
           # Optional: if set to true then the action don't cache or restore ~/.cache/go-build.
           # skip-build-cache: true
+
+      - name: stylelint
+        uses: actions-hub/stylelint@master
+        env:
+            CONFIG_PATH: "resources/web/.stylelintrc.json"
+            PATTERN: "resources/web/*.css"

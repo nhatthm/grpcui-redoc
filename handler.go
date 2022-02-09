@@ -13,6 +13,8 @@ import (
 	"google.golang.org/grpc"
 )
 
+//go:generate make generate
+
 // HandlerOption is an alias of github.com/fullstorydev/grpcui/standalone.HandlerOption to avoid multiple imports.
 type HandlerOption = standalone.HandlerOption
 
