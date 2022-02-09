@@ -92,24 +92,31 @@ img.grpc-logo {
 .grpc-desc span.grpc-form-label {
 	display: inline-block;
 	float: none;
+	font-size: 16px;
+	line-height: 34px;
 }
 
-#grpc-service,
-#grpc-method {
-	font-family: Montserrat, sans-serif;
-	-webkit-font-smoothing: antialiased;
+#grpc-service, #grpc-method {
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    -webkit-font-smoothing: antialiased;
     text-rendering: optimizespeed !important;
-	padding: 10px 30px 10px 20px;
-	height: 45px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background: transparent;
-	background-image: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 32 48' x='0' xmlns='http://www.w3.org/2000/svg' y='0' aria-hidden='true' style='margin-right: -25px;'><polygon points='17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 '></polygon></svg>");
-	background-repeat: no-repeat;
-	background-position-x: 100%;
-	background-position-y: 12px;
-	border: 1px solid #11181A;
-	outline: none;
+    padding: 6px 26px 6px 6px;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 32 48' x='0' xmlns='http://www.w3.org/2000/svg' y='0' aria-hidden='true' style='margin-right: -25px;'><polygon points='17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 '></polygon></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 8px;
+    border: 1px solid #11181A;
+    border-width: 0 0 1px;
+    outline: none;
+}
+
+#grpc-service option, #grpc-method option {
+	font-size: 14px;
 }
 
 .ui-widget {
