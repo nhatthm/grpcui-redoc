@@ -79,7 +79,7 @@ func main() {
 }
 ```
 
-![screenshot](https://user-images.githubusercontent.com/1154587/152815803-5049d636-a69c-489d-b83e-54e4cc9391bd.png)
+![image](https://user-images.githubusercontent.com/1154587/153202990-13515fc3-9a9e-433c-909e-101d167381ae.png)
 
 ## Donation
 
