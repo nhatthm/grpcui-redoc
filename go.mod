@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/fullstorydev/grpcui v1.2.0
-	github.com/jhump/protoreflect v1.10.3
+	github.com/jhump/protoreflect v1.11.0
 	github.com/stretchr/testify v1.7.0
 	google.golang.org/grpc v1.44.0
 )
