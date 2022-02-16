@@ -3,6 +3,7 @@
  */
 
 /* stylelint-disable selector-class-pattern */
+/* stylelint-disable no-descending-specificity */
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap");
 
@@ -317,4 +318,123 @@ img.grpc-logo {
 
 #grpc-history-list .history-item-header .history-item-result.error {
     color: #d41f1c;
+}
+
+.grpc-desc,
+.grpc-desc > tbody,
+.grpc-desc > tbody > tr > td {
+    display: block;
+}
+
+.grpc-desc > tbody > tr {
+    display: inline-block;
+    position: relative !important;
+    overflow: visible;
+}
+
+.grpc-desc pre {
+    font-family: "Roboto Mono", "Courier New", Courier, monospace;
+    font-size: 12px;
+}
+
+#grpc-descriptions {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    overflow: visible;
+    z-index: 1000;
+    margin-left: 36px;
+}
+
+#grpc-descriptions-toggle {
+    left: -36px;
+    cursor: pointer;
+}
+
+#grpc-service-description {
+    margin: 0;
+    background-color: rgba(255 255 255 / 85%);
+    background-clip: padding-box;
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: rgba(0 0 0 / 10%);
+    border-radius: 0.25rem 0.25rem 0 0;
+    box-shadow: rgb(0 0 0 / 10%) 0 -0.25rem 0.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+#grpc-service-description::after {
+    content: " ";
+    height: 0.5em;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 4;
+}
+
+#grpc-method-description {
+    margin-left: 0;
+    background-color: rgba(255 255 255 / 85%);
+    background-clip: padding-box;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: rgba(0 0 0 / 10%);
+    border-radius: 0;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+#grpc-method-description::before {
+    content: " ";
+    position: absolute;
+    top: -0.5em;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 0.5em;
+    background: rgba(255 255 255 / 85%);
+}
+
+#grpc-method-description::after {
+    content: " ";
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.5em;
+    background: rgba(255 255 255 / 85%);
+}
+
+#grpc-service-description-end {
+    margin-left: 0;
+    background-color: rgba(255 255 255 / 85%);
+    background-clip: padding-box;
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: rgba(0 0 0 / 10%);
+    border-radius: 0 0 0.25rem 0.25rem;
+    box-shadow: rgb(0 0 0 / 10%) 0 0.25rem 0.75rem;
+    position: relative;
+    z-index: 3;
+}
+
+#grpc-service-description-end::before {
+    content: " ";
+    position: absolute;
+    z-index: 4;
+    top: -0.5em;
+    left: 0;
+    width: 100%;
+    height: 0.5em;
+    background: rgba(255 255 255 / 85%);
+}
+
+#grpc-service-description,
+#grpc-service-description-end {
+    color: #333;
 }
