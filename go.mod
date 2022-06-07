@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/fullstorydev/grpcui v1.3.0
 	github.com/jhump/protoreflect v1.11.1-0.20220215191356-c1d18a52a21d
-	github.com/stretchr/testify v1.7.1
+	github.com/stretchr/testify v1.7.2
 	google.golang.org/grpc v1.47.0
 )
 
@@ -19,5 +19,5 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/genproto v0.0.0-20220215190005-e57b466719ef // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
