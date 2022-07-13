@@ -6,7 +6,7 @@ require (
 	github.com/fullstorydev/grpcui v1.3.0
 	github.com/jhump/protoreflect v1.11.1-0.20220215191356-c1d18a52a21d
 	github.com/stretchr/testify v1.8.0
-	google.golang.org/grpc v1.47.0
+	google.golang.org/grpc v1.48.0
 )
 
 require (
