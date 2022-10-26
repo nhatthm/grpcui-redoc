@@ -159,7 +159,7 @@ func createGRPCServer(t *testing.T, opts ...interface{}) (*grpc.Server, *grpc.Cl
 	l := bufconn.Listen(1024 * 1024)
 
 	go func() {
-		defer l.Close() // nolint: errcheck
+		defer l.Close() //nolint: errcheck
 
 		err := s.Serve(l)
 

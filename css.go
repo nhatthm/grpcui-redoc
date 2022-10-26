@@ -11,7 +11,7 @@ const cssContent = `
 /* stylelint-disable selector-class-pattern */
 /* stylelint-disable no-descending-specificity */
 
-@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Mono:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap");
 
 h1 {
     font-family: Montserrat, sans-serif !important;
