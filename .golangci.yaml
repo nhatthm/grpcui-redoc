@@ -21,6 +21,7 @@ linters:
   enable-all: true
   disable:
     - contextcheck
+    - deadcode
     - exhaustivestruct
     - forbidigo
     - forcetypeassert
@@ -35,11 +36,14 @@ linters:
     - ireturn
     - lll
     - maligned
+    - nosnakecase
     - paralleltest
     - scopelint
+    - structcheck
     - tagliatelle
     - testpackage
     - wrapcheck
+    - varcheck
     - varnamelen
 
 issues:
