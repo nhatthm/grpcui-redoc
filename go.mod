@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/fullstorydev/grpcui v1.3.1
 	github.com/jhump/protoreflect v1.15.1
-	github.com/stretchr/testify v1.8.3
+	github.com/stretchr/testify v1.8.4
 	google.golang.org/grpc v1.55.0
 )
 
