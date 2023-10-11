@@ -6,7 +6,7 @@ require (
 	github.com/fullstorydev/grpcui v1.3.1
 	github.com/jhump/protoreflect v1.15.1
 	github.com/stretchr/testify v1.8.4
-	google.golang.org/grpc v1.56.2
+	google.golang.org/grpc v1.58.3
 )
 
 require (
@@ -15,11 +15,11 @@ require (
 	github.com/fullstorydev/grpcurl v1.8.7 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sync v0.2.0 // indirect
-	golang.org/x/sys v0.8.0 // indirect
-	golang.org/x/text v0.9.0 // indirect
-	google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 // indirect
-	google.golang.org/protobuf v1.30.0 // indirect
+	golang.org/x/net v0.12.0 // indirect
+	golang.org/x/sync v0.3.0 // indirect
+	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/text v0.11.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230711160842-782d3b101e98 // indirect
+	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
