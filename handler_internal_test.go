@@ -64,9 +64,7 @@ func TestHandlerViaReflection_CouldNotGetFilesViaReflection(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 
-func TestHandlerViaReflection(t *testing.T) {
-	t.Parallel()
-
+func TestHandlerViaReflection(t *testing.T) { //nolint: paralleltest
 	testCases := []struct {
 		scenario            string
 		options             []HandlerOption
@@ -87,9 +85,7 @@ func TestHandlerViaReflection(t *testing.T) {
 
 	for _, tc := range testCases {
 		tc := tc
-		t.Run(tc.scenario, func(t *testing.T) {
-			t.Parallel()
-
+		t.Run(tc.scenario, func(t *testing.T) { //nolint: paralleltest
 			_, conn := createGRPCServerWithReflection(t)
 
 			h, err := HandlerViaReflection(context.Background(), conn, "", tc.options...)

@@ -4,7 +4,7 @@ VENDOR_DIR = vendor
 NODE_MODULES_DIR = resources/web/node_modules
 CSS_FILE ?= css.go
 
-GOLANGCI_LINT_VERSION ?= v1.52.2
+GOLANGCI_LINT_VERSION ?= v1.55.2
 
 GO ?= go
 GOLANGCI_LINT ?= $(shell go env GOPATH)/bin/golangci-lint-$(GOLANGCI_LINT_VERSION)
