@@ -49,7 +49,7 @@ jobs:
           # skip-build-cache: true
 
       - name: stylelint
-        uses: actions-hub/stylelint@master
+        uses: nhatthm/stylelint@master
         env:
           CONFIG_PATH: "resources/web/.stylelintrc.json"
           PATTERN: "resources/web/*.css"
