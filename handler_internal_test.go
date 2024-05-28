@@ -44,7 +44,7 @@ func TestHandlerViaReflection_CouldNotGetFilesViaReflection(t *testing.T) {
 	cnt := 0
 
 	_, conn := createGRPCServerWithReflection(t,
-		grpc.ChainStreamInterceptor(func(srv interface{}, ss grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
+		grpc.ChainStreamInterceptor(func(srv any, ss grpc.ServerStream, _ *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
 			if cnt > 0 {
 				return status.Error(codes.Internal, "reflection error")
 			}
@@ -119,12 +119,12 @@ func TestHandlerViaReflection(t *testing.T) { //nolint: paralleltest
 			require.NoError(t, err, "could not get grpc logo: %w", err)
 
 			assert.Equal(t, http.StatusTemporaryRedirect, logoCode)
-			assert.Equal(t, svgLogo, logoHeader.Get("location"))
+			assert.Equal(t, svgLogo, logoHeader.Get("Location"))
 		})
 	}
 }
 
-func splitGRPCOptions(opts ...interface{}) ([]grpc.ServerOption, []func(s *grpc.Server)) {
+func splitGRPCOptions(opts ...any) ([]grpc.ServerOption, []func(s *grpc.Server)) {
 	srvOpts := make([]grpc.ServerOption, 0, len(opts))
 	configure := make([]func(s *grpc.Server), 0, len(opts))
 
@@ -141,7 +141,7 @@ func splitGRPCOptions(opts ...interface{}) ([]grpc.ServerOption, []func(s *grpc.
 	return srvOpts, configure
 }
 
-func createGRPCServer(t *testing.T, opts ...interface{}) (*grpc.Server, *grpc.ClientConn) {
+func createGRPCServer(t *testing.T, opts ...any) (*grpc.Server, *grpc.ClientConn) {
 	t.Helper()
 
 	srvOpts, configure := splitGRPCOptions(opts...)
@@ -166,7 +166,7 @@ func createGRPCServer(t *testing.T, opts ...interface{}) (*grpc.Server, *grpc.Cl
 		s.GracefulStop()
 	})
 
-	conn, err := grpc.DialContext(context.Background(), "",
+	conn, err := grpc.NewClient("passthrough://",
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithContextDialer(func(context.Context, string) (net.Conn, error) {
 			return l.Dial()
@@ -177,7 +177,7 @@ func createGRPCServer(t *testing.T, opts ...interface{}) (*grpc.Server, *grpc.Cl
 	return s, conn
 }
 
-func createGRPCServerWithReflection(t *testing.T, opts ...interface{}) (*grpc.Server, *grpc.ClientConn) {
+func createGRPCServerWithReflection(t *testing.T, opts ...any) (*grpc.Server, *grpc.ClientConn) {
 	t.Helper()
 
 	opts = append(opts, func(s *grpc.Server) {
