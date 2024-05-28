@@ -1,6 +1,7 @@
 # See https://github.com/golangci/golangci-lint/blob/master/.golangci.example.yml
 run:
   tests: true
+  timeout: 5m
 
 linters-settings:
   errcheck:
@@ -12,17 +13,18 @@ linters-settings:
     threshold: 100
   misspell:
     locale: US
-  unused:
-    check-exported: false
   unparam:
     check-exported: true
 
 linters:
   enable-all: true
   disable:
+    - copyloopvar
     - contextcheck
     - deadcode
     - depguard
+    - err113
+    - execinquery
     - exhaustivestruct
     - exhaustruct
     - forbidigo
@@ -32,28 +34,33 @@ linters:
     - golint
     - gomoddirectives
     - gomnd
-    - goerr113
     - ifshort
+    - intrange
     - interfacer
     - ireturn
     - lll
     - maligned
+    - mnd
     - nosnakecase
     - paralleltest
     - scopelint
     - structcheck
     - tagliatelle
+    - testifylint
     - testpackage
-    - wrapcheck
     - varcheck
     - varnamelen
+    - wrapcheck
 
 issues:
-  max-same-issues: 20
+  max-issues-per-linter: 200
+  max-same-issues: 50
   exclude-use-default: false
   exclude-rules:
     - linters:
+        - containedctx
         - dupl
+        - err113
         - funlen
         - goconst
         - goerr113
