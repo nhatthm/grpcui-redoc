@@ -8,7 +8,7 @@ import (
 
 	"github.com/fullstorydev/grpcui"
 	"github.com/fullstorydev/grpcui/standalone"
-	"github.com/jhump/protoreflect/desc"
+	"github.com/jhump/protoreflect/desc" //nolint: staticcheck
 	"github.com/jhump/protoreflect/dynamic/grpcdynamic"
 	"google.golang.org/grpc"
 )

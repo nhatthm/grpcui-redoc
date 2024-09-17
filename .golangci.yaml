@@ -21,34 +21,25 @@ linters:
   disable:
     - copyloopvar
     - contextcheck
-    - deadcode
     - depguard
     - err113
     - execinquery
-    - exhaustivestruct
     - exhaustruct
+    - exportloopref
     - forbidigo
     - forcetypeassert
     - gci
     - gochecknoglobals
-    - golint
     - gomoddirectives
     - gomnd
-    - ifshort
     - intrange
-    - interfacer
     - ireturn
     - lll
-    - maligned
     - mnd
-    - nosnakecase
     - paralleltest
-    - scopelint
-    - structcheck
     - tagliatelle
     - testifylint
     - testpackage
-    - varcheck
     - varnamelen
     - wrapcheck
 
