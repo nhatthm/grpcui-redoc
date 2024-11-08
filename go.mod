@@ -1,12 +1,13 @@
 module github.com/nhatthm/grpcui-redoc
 
 go 1.21
+toolchain go1.22.9
 
 require (
 	github.com/fullstorydev/grpcui v1.5.0
 	github.com/jhump/protoreflect v1.17.0
 	github.com/stretchr/testify v1.9.0
-	google.golang.org/grpc v1.67.1
+	google.golang.org/grpc v1.68.0
 )
 
 require (
