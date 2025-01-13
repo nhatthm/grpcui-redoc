@@ -23,7 +23,6 @@ linters:
     - contextcheck
     - depguard
     - err113
-    - execinquery
     - exhaustruct
     - exportloopref
     - forbidigo
@@ -31,7 +30,6 @@ linters:
     - gci
     - gochecknoglobals
     - gomoddirectives
-    - gomnd
     - intrange
     - ireturn
     - lll
@@ -56,6 +54,7 @@ issues:
         - goconst
         - goerr113
         - gomnd
+        - mnd
         - noctx
         - rowserrcheck
       path: "_test.go"
